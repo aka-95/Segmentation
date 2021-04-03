@@ -1,0 +1,11 @@
+Abtract:
+-DNNs for segmentation usually are (1) Encoder Decoder network architecture or (2) Spatial Pyramid Pooling architecture
+-Enc-Dec is better for taking the sharp boundaries in consideration and SPP is better for combining local and global contexts.
+- DeeplabV3+ combines both methods and gives a refined decoder better than deeplabv3 and so gives better results without any postprocessing.
+
+Introduction and Related Works:
+- DeepLabV3 (which uses ASPP) using ResNet101 backbone is prohibitively large if we want denser output features to be extracted(ie less pooling layers but same channel count)
+- So, they add a decoder to deeplabv3 (density of output encodings limited by available compute due to above point) to get the better boundaries
+- depthwise separable convolution? where you factor say a 3x3 convolution into a 3x1 convolution and a 1x3 convolution (rethinking the inception module paper reference)
+- they incorporate atrous (depthwise) separable convolution to reduce computational resorces required.
+- output_stride is defined as ratio of input image spatial resolution to the final output resolution(before the FC layers)
