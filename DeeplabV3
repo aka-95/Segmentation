@@ -1,0 +1,3 @@
+Abtract - 
+-DNNs for segmentation usually are (1) Encoder Decoder network architecture or (2) Spatial Pyramid Pooling architecture
+-Enc-Dec is better for taking the sharp boundaries in consideration and SPP is better for combining local and global contexts.
