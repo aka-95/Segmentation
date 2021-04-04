@@ -9,3 +9,22 @@ Introduction and Related Works:
 - depthwise separable convolution? where you factor say a 3x3 convolution into a 3x1 convolution and a 1x3 convolution (rethinking the inception module paper reference)
 - they incorporate atrous (depthwise) separable convolution to reduce computational resorces required.
 - output_stride is defined as ratio of input image spatial resolution to the final output resolution(before the FC layers)
+
+Methodology and Architecture-
+-backbone is "aligned xception" that uses deformable convolutions[1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1] deformable convolutions
