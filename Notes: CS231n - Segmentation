@@ -9,7 +9,8 @@ Notes: CS231n - Justin Johnson - Segmentation
   but we know depth is essential for good learning, so Solution - downsample the images (std. maxpooling) and then upsample them (using NN, 
   Transposed conv(learned weights used), bed of nails, max unpooling(remenber the max index while pooling))
 
--Classifation +Localization as a task - two FC Layers/subnets to predict localization bbox coords(regression loss) and class confidences(classification loss) 
-respectively. issues arise when backproping if either of the two losses dominate. In such cases, hyperparameter is used to weight the losses appropriately. 
-this is tricky because our loss value itself is being changed by the change in hyperparameter so it is important to have a look at some other value that we 
-care about for tuning this hyperparameter.
+- Classifation +Localization as a task - two FC Layers/subnets to predict localization bbox coords(regression loss) and class confidences(classification loss) 
+  respectively. issues arise when backproping if either of the two losses dominate. In such cases, hyperparameter is used to weight the losses appropriately. 
+  this is tricky because our loss value itself is being changed by the change in hyperparameter so it is important to have a look at some other value that we 
+  care about for tuning this hyperparameter. 
+  Aside - pose estimation from a single image can be done by regressing like bboxes. ie regress for positions of different joints
