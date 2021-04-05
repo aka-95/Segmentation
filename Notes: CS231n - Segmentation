@@ -24,5 +24,5 @@ Notes: CS231n - Justin Johnson - Segmentation
   for the object less regions) is done along with a correction offset being predicted to enhance the bounding box. slow test time (~47 sec)
   Eg: Fast RCNN - instead of using rois on the input image, take convolutional features extracted from image and map the region proposals onto them - basically 
   reduce the time by sharing convolutional operations/features - test time much faster and dominated by region proposal generator (~2sec) - roi pooling
-  Eg: Faster RCNN - instead of using mapping for region proposals, learn them too, - 4 tasks and so multi task loss - mmreduces the test time to (<=1sec)
+  Eg: Faster RCNN - instead of using mapping for region proposals, learn them too, - 4 tasks and so multi task loss - mmreduces the test time to (~0.2sec)
   
