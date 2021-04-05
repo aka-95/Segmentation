@@ -16,3 +16,10 @@ Notes: CS231n - Justin Johnson - Segmentation
   Aside - pose estimation from a single image can be done by regressing like bboxes. ie regress for positions of different joints
   
 - PASCAL-VOC is a relatively easy dataset to quote results on.
+
+- Object detection as a problem - is trickier than localization because the number of possible objects is unlimited (so, sliding window kind of approach is needed) 
+  or bounding boxes/proposal regions which is then followed by classification of regions . 
+  Eg: RCNN - Region Proposals found using traditional methods (~2000), then 
+  varying size bounding boxes are warped to a fixed size so that they can be used inside CNNs and classification (additional class called background used to account 
+  for the object less regions) is done along with a correction offset being predicted to enhance the bounding box. 
+  
