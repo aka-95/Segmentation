@@ -21,5 +21,8 @@ Notes: CS231n - Justin Johnson - Segmentation
   or bounding boxes/proposal regions which is then followed by classification of regions . 
   Eg: RCNN - Region Proposals found using traditional methods (~2000), then 
   varying size bounding boxes are warped to a fixed size so that they can be used inside CNNs and classification (additional class called background used to account 
-  for the object less regions) is done along with a correction offset being predicted to enhance the bounding box. 
+  for the object less regions) is done along with a correction offset being predicted to enhance the bounding box. slow test time (~47 sec)
+  Eg: Fast RCNN - instead of using rois on the input image, take convolutional features extracted from image and map the region proposals onto them - basically 
+  reduce the time by sharing convolutional operations/features - test time much faster and dominated by region proposal generator (~2sec) - roi pooling
+  Eg: Faster RCNN - instead of using mapping for region proposals, learn them too, - 4 tasks and so multi task loss - mmreduces the test time to (<=1sec)
   
