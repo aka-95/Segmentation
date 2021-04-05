@@ -1,0 +1,15 @@
+Notes: CS231n - Justin Johnson - Segmentation
+- segmentation as a task - assign labels to each pixel - output usually comes from the softmax layer and has form {n_classes x image widht x image height} 
+  where n classes is th no .of classes of segmentation which are then  argmaxed to assign labels to each pixel - loss used is generally cross entropy 
+  - data is very difficult to annotate
+
+  
+- Simplest approach - sliding window and classify - impractical
+- Better - CNNs without FCs - but without downsampling, the compute requirements become prohibitively expensive - (ie 512 depth channels of 1024x2048 image) 
+  but we know depth is essential for good learning, so Solution - downsample the images (std. maxpooling) and then upsample them (using NN, 
+  Transposed conv(learned weights used), bed of nails, max unpooling(remenber the max index while pooling))
+
+-Classifation +Localization as a task - two FC Layers/subnets to predict localization bbox coords(regression loss) and class confidences(classification loss) 
+respectively. issues arise when backproping if either of the two losses dominate. In such cases, hyperparameter is used to weight the losses appropriately. 
+this is tricky because our loss value itself is being changed by the change in hyperparameter so it is important to have a look at some other value that we 
+care about for tuning this hyperparameter.
