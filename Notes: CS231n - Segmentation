@@ -14,3 +14,5 @@ Notes: CS231n - Justin Johnson - Segmentation
   this is tricky because our loss value itself is being changed by the change in hyperparameter so it is important to have a look at some other value that we 
   care about for tuning this hyperparameter. 
   Aside - pose estimation from a single image can be done by regressing like bboxes. ie regress for positions of different joints
+  
+- PASCAL-VOC is a relatively easy dataset to quote results on.
