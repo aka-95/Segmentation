@@ -34,4 +34,4 @@ Notes: CS231n - Justin Johnson - Segmentation
   
   Broadly speaking, object detection is more accurate for region proposal based things and faster for single shot things.
   
-  
+  Mask RCNN - Faster RCNN backbone - ROI proposals followed by mini segmentation over all the ROIs - testing take 5fps on a GPU - 
