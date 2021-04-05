@@ -19,10 +19,19 @@ Notes: CS231n - Justin Johnson - Segmentation
 
 - Object detection as a problem - is trickier than localization because the number of possible objects is unlimited (so, sliding window kind of approach is needed) 
   or bounding boxes/proposal regions which is then followed by classification of regions . 
-  Eg: RCNN - Region Proposals found using traditional methods (~2000), then 
+  Eg: 
+  class 1 - region proposal based
+  RCNN - Region Proposals found using traditional methods (~2000), then 
   varying size bounding boxes are warped to a fixed size so that they can be used inside CNNs and classification (additional class called background used to account 
   for the object less regions) is done along with a correction offset being predicted to enhance the bounding box. slow test time (~47 sec)
   Eg: Fast RCNN - instead of using rois on the input image, take convolutional features extracted from image and map the region proposals onto them - basically 
   reduce the time by sharing convolutional operations/features - test time much faster and dominated by region proposal generator (~2sec) - roi pooling
   Eg: Faster RCNN - instead of using mapping for region proposals, learn them too, - 4 tasks and so multi task loss - mmreduces the test time to (~0.2sec)
+  
+  class2 - single shot / detection without region proposals
+  YOLO - we divide the image into 7x7 base grid and each grid checks out a fixed number of rectangles centered on it for objects(and classes) and class 
+  confidence. so each region proposal doesnt havet to be worked on sequentially hence faster. 
+  
+  Broadly speaking, object detection is more accurate for region proposal based things and faster for single shot things.
+  
   
