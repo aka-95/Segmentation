@@ -1,0 +1,55 @@
+Why transformers over CNNs?
+1. Parallelization
+2. Long Distance Relations in sequences(including images) can be modelled much better
+3. Transformers require minimal inductive biases for their design and are naturally suited as set-functions.(what are set functions?) 
+4. Multiple modalities can be processed using similar blocks that are minimally modality dependent.
+5. More efficient memory utilization? (Umm how?)
+6. It is scalable to very high-complexity models and large-scale datasets.(trillions of params) - which in turn would mean more data (but this is handled by unlabelled pretraining because the model is minimally dependent on problem specific priors)
+7. Another shortcoming of CNN - Furthermore, convolution filter weights
+remain fixed after training so the operation cannot adapt
+dynamically to any variation to the input. 
+
+
+Note: Time and data requirements: Less because of parallelization, Same or more?
+Note: Recent approaches
+show that convolution operations can be fully replaced
+with attention-based transformer modules and have also
+been used jointly in a single design to encourage symbiosis
+between the two complementary set of operations
+Note: Further, self-attention is invariant
+to permutations and changes in the number of input points.
+As a result, it can easily operate on irregular inputs as op-
+posed to standard convolution that requires grid structure.
+
+Note: Note that, different from
+regular convolutional networks where feature aggregation
+and feature transformation are simultaneously performed
+(e.g., with a convolution layer followed by a non-linearity),
+these two steps are decoupled in the Transformer model
+i.e., self-attention layer only performs aggregation while the
+feed-forward layer performs transformation.
+Note: Transformer is data-hungry in nature e.g., a large-
+scale dataset like ImageNet is not enough to train Vision
+Transformer from scratch so [12] proposes to distill knowl-
+edge from a CNN teacher to a student Vision Transformer
+which allowed Transformer
+
+Q: Multihead attention same vales kyu nahi learn karta?
+
+Key Challenges:
+1. Images have a lot more detail than words. How to model it without requiring O(n^4) compute for the same?
+
+Concepts contributing to sucees of transformers:
+1. Self-Attention
+2. Bidirectional Feature Encoding
+3. Large Scale Pretraining
+SSL used -- two types of ssl -- fill in the blanks or contrastive learning
+We can broadly categorize existing SSL methods based
+upon their pretext tasks into (a) generative approaches which
+synthesize images or videos (given conditional inputs), (b)
+context-based methods which exploit the relationships be-
+tween image patches or video frames, and (c) cross-modal
+methods which leverage from multiple data modalities.
+
+Resources:
+Transformers in Vision: A Survey - mubarak shah
