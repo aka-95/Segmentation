@@ -1,0 +1,13 @@
+For normal autoencoders - Encoder and Decoder are not connected via residual connections. 
+They map the input to a latent space vector.
+For simple autoencoders the output usually becomes more hazy as the bottleneck dimensionality decreases because of information loss due to compression.
+Denoising autoencoders can be used for watermark removal too.
+Segmentation uses similar encoder decoder architecture but the target is just the semantic segmentation map.
+
+Variational autoencoders- have encoder decoder structure too but they map the input to a distribution.
+- so instead of the bottleneck being a single vector, it has two vectors -mean and std deviation
+Loss function becomes combination of avg reconstruction loss and KL divergence of the distribution being learnt
+Reparamatrization trick is used to get the gradients for backprop.
+
+Disentangled Variational autoencoders -
+
